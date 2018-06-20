@@ -1,0 +1,26 @@
+Xft.autohint:  false
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting:   true
+Xft.antialias: true
+Xft.rgba:      rgb
+
+
+
+
+
+
+! URxvt*.transparent: true
+! URxvt*.shading: 60
+URxvt.background: #1C1C1C
+URxvt.foreground: #ffffff
+URxvt.xftAntialias: true
+#ifdef derecho
+URxvt.font: xft:terminus:pixelsize=18:hinting=true
+#else
+URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+#endif
+URxvt.scrollstyle: plain
+URxvt.iso14755: False
+URxvt.keysym.C-Up: perl:font-size:increase
+URxvt.keysym.C-Down: perl:font-size:decrease
