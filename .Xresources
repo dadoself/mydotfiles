@@ -5,22 +5,41 @@ Xft.hinting:   true
 Xft.antialias: true
 Xft.rgba:      rgb
 
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
 
+! special
+*.foreground:   #ffffff
+*.background:   #121212
+*.cursorColor:  #ffffff
 
+! black
+*.color0:       #232323
+*.color8:       #343434
 
+! red
+*.color1:       #994444
+*.color9:       #bc6767
 
+! green
+*.color2:       #668866
+*.color10:      #89a589
 
-! URxvt*.transparent: true
-! URxvt*.shading: 60
-URxvt.background: #1C1C1C
-URxvt.foreground: #ffffff
-URxvt.xftAntialias: true
-#ifdef derecho
-URxvt.font: xft:terminus:pixelsize=18:hinting=true
-#else
-URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
-#endif
-URxvt.scrollstyle: plain
-URxvt.iso14755: False
-URxvt.keysym.C-Up: perl:font-size:increase
-URxvt.keysym.C-Down: perl:font-size:decrease
+! yellow
+*.color3:       #eebb66
+*.color11:      #ffd693
+
+! blue
+*.color4:       #446c88
+*.color12:      #698aa1
+
+! magenta
+*.color5:       #ee7777
+*.color13:      #ffa6a6
+
+! cyan
+*.color6:       #468b8b
+*.color14:      #6faaaa
+
+! white
+*.color7:       #dddddd
+*.color15:      #efefef
