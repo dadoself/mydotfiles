@@ -16,38 +16,37 @@ URxvt.iso14755_52: false
 URxvt.scrollstyle: plain
 
 ! special
-*.foreground:   #ffffff
-*.background:   #121212
-*.cursorColor:  #ffffff
+*.background: #343434
+*.foreground: #efefef
 
 ! black
-*.color0:       #232323
-*.color8:       #343434
+*.color0:     #232323
+*.color8:     #343434
 
 ! red
-*.color1:       #994444
-*.color9:       #bc6767
+*.color1:     #994444
+*.color9:     #bc6767
 
 ! green
-*.color2:       #668866
-*.color10:      #89a589
+*.color2:     #668866
+*.color10:    #89a589
 
 ! yellow
-*.color3:       #eebb66
-*.color11:      #ffd693
+*.color3:     #eebb66
+*.color11:    #ffd693
 
 ! blue
-*.color4:       #446c88
-*.color12:      #698aa1
+*.color4:     #446c88
+*.color12:    #698aa1
 
 ! magenta
-*.color5:       #ee7777
-*.color13:      #ffa6a6
+*.color5:     #ee7777
+*.color13:    #ffa6a6
 
 ! cyan
-*.color6:       #468b8b
-*.color14:      #6faaaa
+*.color6:     #468b8b
+*.color14:    #6faaaa
 
 ! white
-*.color7:       #dddddd
-*.color15:      #efefef
+*.color7:     #dddddd
+*.color15:    #efefef
