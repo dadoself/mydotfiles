@@ -5,7 +5,15 @@ Xft.hinting:   true
 Xft.antialias: true
 Xft.rgba:      rgb
 
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
+URxvt.font:           xft:DejaVu Sans Mono:pixelsize=16
+URxvt.boldFont:       xft:DejaVu Sans Mono Bold:pixelsize=16
+URxvt.italicFont:     xft:DejaVu Sans Mono Oblique:pixelsize=16
+URxvt.boldItalicFont: xft:DejaVu Sans Mono Bold Oblique:pixelsize=16
+
+URxvt.iso14755:    false
+URxvt.iso14755_52: false
+
+URxvt.scrollstyle: plain
 
 ! special
 *.foreground:   #ffffff
