@@ -16,12 +16,12 @@ URxvt.iso14755_52: false
 URxvt.scrollstyle: plain
 
 ! special
-*.background: #343434
-*.foreground: #efefef
+*.background: #3a3a3a
+*.foreground: #d7d7d7
 
 ! black
-*.color0:     #232323
-*.color8:     #343434
+*.color0:     #262626
+*.color8:     #4e4e4e
 
 ! red
 *.color1:     #994444
@@ -48,5 +48,5 @@ URxvt.scrollstyle: plain
 *.color14:    #6faaaa
 
 ! white
-*.color7:     #dddddd
-*.color15:    #efefef
+*.color7:     #c6c6c6
+*.color15:    #e4e4e4
