@@ -15,7 +15,7 @@ set $menu dmenu_run
 ### Output configuration
 #
 # Wallpaper
-output * bg /home/davide/Pictures/rickandmorty_ispirational.png fill
+output * bg /home/dado/Pictures/rickandmorty_ispirational.png fill
 
 ### Input configuration
 #
