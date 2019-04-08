@@ -1,9 +1,13 @@
 .mydotfiles/
 .zcompcache/
-.AndroidStudio3.2/
+.AndroidStudio*/
 android-studio/
 Android/
 Projects/
+Documents/
+Downloads/
+Pictures/
+Desktop/
 .gradle/
 .cache/
 .android/
@@ -14,6 +18,8 @@ Projects/
 .config/sublime-merge/
 .config/sublime-text-3/
 .config/session/
+.config/GIMP/
+.config/vlc/
 .local/share/
 .emacs.d/
 .gnupg/
@@ -22,3 +28,6 @@ Projects/
 .task/
 .pki/
 .ssh/
+.var/
+.Xauthority
+.timewarrior/data/
