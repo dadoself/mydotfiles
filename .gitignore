@@ -1,6 +1,7 @@
 .mydotfiles/
 .zcompcache/
 .AndroidStudio*/
+.CLion*/
 android-studio/
 Android/
 Projects/
@@ -8,6 +9,7 @@ Documents/
 Downloads/
 Pictures/
 Desktop/
+snap/
 .gradle/
 .cache/
 .android/
@@ -20,8 +22,12 @@ Desktop/
 .config/session/
 .config/GIMP/
 .config/vlc/
+.config/Slack/
 .local/share/
 .emacs.d/
+.mozilla/
+.rustup/
+.stack/
 .gnupg/
 .java/
 .kde4/

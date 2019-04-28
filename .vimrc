@@ -6,3 +6,5 @@ syntax on
 set number
 
 colors zenburn
+
+inoremap jk <ESC>
