@@ -3,14 +3,19 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like emacs
-set $left  b
-set $down  n
-set $up    p
-set $right f
+#set $left  b
+#set $down  n
+#set $up    p
+#set $right f
+# Home row direction keys, like vim
+set $left  h
+set $down  j
+set $up    k
+set $right l
 # Your preferred terminal emulator
 set $term urxvt
 # Your preferred application launcher
-set $menu dmenu_run
+set $menu bemenu-run
 
 ### Output configuration
 #
@@ -41,8 +46,8 @@ input * accel_profile flat
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your wayland session)
-    bindsym $mod+Shift+e exit
+    # exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -96,9 +101,9 @@ input * accel_profile flat
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+h or $mod+v, for horizontal and vertical splits
+    # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+h splith
+    bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -107,7 +112,7 @@ input * accel_profile flat
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+l fullscreen
+    bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -158,13 +163,14 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 bar {
-    status_command i3status
-    position       top
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
+#    status_command i3status
+#    position       top
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
 }
 
 include /etc/sway/config.d/*
