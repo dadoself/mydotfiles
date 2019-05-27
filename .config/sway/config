@@ -16,9 +16,11 @@ set $right l
 set $term urxvt
 # Your preferred application launcher
 set $menu j4-dmenu-desktop --dmenu='bemenu -i' --term='urxvt'
+# Lock command
+set $lock swaylock -c 4c789980
 # Modes
 set $resize "resize"
-set $system "system: [e]xit [p]oweroff [r]eboot"
+set $system "system: [E]xit [L]ock [P]oweroff [R]eboot [S]uspend"
 
 ### Output configuration
 #
@@ -174,9 +176,11 @@ bindsym $mod+r mode $resize
 # System commands
 #
 mode $system {
-    bindsym e exit
-    bindsym p exec 'swaymsg exit ; systemctl poweroff'
-    bindsym r exec 'swaymsg exit ; systemctl reboot'
+    bindsym e mode "default" ; exit
+    bindsym l mode "default" ; exec $lock
+    bindsym p mode "default" ; exec systemctl poweroff
+    bindsym r mode "default" ; exec systemctl reboot
+    bindsym s mode "default" ; exec $lock ; exec systemctl suspend
 
     # return to default mode
     bindsym Return mode "default"
