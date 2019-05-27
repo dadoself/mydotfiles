@@ -15,16 +15,28 @@ set $right l
 # Your preferred terminal emulator
 set $term urxvt
 # Your preferred application launcher
-set $menu bemenu-run
+set $menu j4-dmenu-desktop --dmenu='bemenu -i' --term='urxvt'
+# Modes
+set $resize "resize"
+set $system "system: [e]xit [p]oweroff [r]eboot"
 
 ### Output configuration
 #
 # Wallpaper
 output * bg /home/dado/Pictures/rickandmorty_ispirational.png fill
+output "eDP-1" scale 2
+output "eDP-1" pos 0 0 res 2560x1440
+#output "HDMI"  pos 0 0 res 1920x1080
 
 ### Input configuration
 #
-input * accel_profile flat
+input "1267:33:Elan_Touchpad" {
+    tap enabled
+    natural_scroll enabled
+}
+input "1133:50484:Logitech_USB_Receiver_Mouse" {
+    accel_profile flat
+}
 
 ### Key bindings
 #
@@ -47,7 +59,7 @@ input * accel_profile flat
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -137,7 +149,7 @@ input * accel_profile flat
 #
 # Resizing containers:
 #
-mode "resize" {
+mode $resize {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
@@ -157,20 +169,36 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode $resize
+#
+# System commands
+#
+mode $system {
+    bindsym e exit
+    bindsym p exec 'swaymsg exit ; systemctl poweroff'
+    bindsym r exec 'swaymsg exit ; systemctl reboot'
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode $system
+#
+# Screenshot
+#
+bindsym $mod+Print       exec grim               ~/Pictures/"$(date +"%Y_%m_%d_%H_%M_%S")".png
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" ~/Pictures/"$(date +"%Y_%m_%d_%H_%M_%S")".png
 
 #
 # Status Bar:
 #
 bar {
     swaybar_command waybar
-#    status_command i3status
-#    position       top
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
 }
+
+#
+# Borders:
+#
+default_border pixel
 
 include /etc/sway/config.d/*

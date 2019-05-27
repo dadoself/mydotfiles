@@ -19,3 +19,4 @@ typeset -U path
 path=(~/.local/bin $path[@])
 
 alias mydotfiles='git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
+alias sway='_JAVA_AWT_WM_NONREPARENTING=1 sway'

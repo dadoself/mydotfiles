@@ -2,6 +2,7 @@
 .zcompcache/
 .AndroidStudio*/
 .CLion*/
+.IdeaIC*/
 android-studio/
 Android/
 Projects/
