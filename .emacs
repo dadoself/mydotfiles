@@ -1,16 +1,159 @@
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(blink-cursor-mode -1)
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
+
+(setq scroll-step 1)
+;(setq scroll-conservatively 10000)
+
+;; Package
 (require 'package)
+(add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/") t)
 (package-initialize)
-(add-to-list 'package-archives '("melpa"        . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 
-(custom-set-variables
- '(inhibit-startup-screen t)
- '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(package-selected-packages (quote (multiple-cursors expand-region))))
-(custom-set-faces)
+;; Helm
+(require 'helm-config)
+(helm-mode 1)
+(define-key global-map [remap find-file]                'helm-find-files)
+(define-key global-map [remap occur]                    'helm-occur)
+(define-key global-map [remap list-buffers]             'helm-buffers-list)
+(define-key global-map [remap dabbrev-expand]           'helm-dabbrev)
+(define-key global-map [remap execute-extended-command] 'helm-M-x)
+(unless (boundp 'completion-in-region-function)
+  (define-key lisp-interaction-mode-map [remap completion-at-point] 'helm-lisp-completion-at-point)
+  (define-key emacs-lisp-mode-map       [remap completion-at-point] 'helm-lisp-completion-at-point))
 
+;; Sublimity
+(require 'sublimity)
+(require 'sublimity-scroll)
+;(require 'sublimity-map)
+(require 'sublimity-attractive)
+(sublimity-mode 1)
+
+;; All the icons
+(require 'all-the-icons)
+
+;; Projectile
+(require 'projectile)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; Dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-center-content t)
+(setq dashboard-items '((recents  . 5)
+			(bookmarks . 5)
+			(projects . 5)
+			(agenda . 5)
+			(registers . 5)))
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+
+;; Magit
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; Avy
+(require 'avy)
+(require 'ace-window)
+(require 'ace-link)
+(avy-setup-default)
+(ace-link-setup-default)
+(global-set-key (kbd "C-c C-j") 'avy-resume)
+(global-set-key (kbd "C-:")     'avy-goto-char)
+(global-set-key (kbd "C-'")     'avy-goto-char-2)
+(global-set-key (kbd "M-g f")   'avy-goto-line);M-g g
+(global-set-key (kbd "M-g w")   'avy-goto-word-1)
+(global-set-key (kbd "M-g e")   'avy-goto-word-0)
+(global-set-key (kbd "M-o")     'ace-window)
+
+;; Treemacs
+(require 'treemacs)
+(require 'treemacs-projectile)
+(require 'treemacs-magit)
+(require 'treemacs-icons-dired)
+(treemacs-icons-dired-mode)
+(global-set-key (kbd "M-0")       'treemacs-select-window)
+(global-set-key (kbd "C-x t 1")   'treemacs-delete-other-windows)
+(global-set-key (kbd "C-x t t")   'treemacs)
+(global-set-key (kbd "C-x t B")   'treemacs-bookmark)
+(global-set-key (kbd "C-x t C-t") 'treemacs-find-file)
+(global-set-key (kbd "C-x t M-t") 'treemacs-find-tag)
+
+;; Anzu
+(require 'anzu)
+(global-anzu-mode +1)
+
+;; Yascroll
+(require 'yascroll)
+(global-yascroll-bar-mode 1)
+
+;; Multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->")         'mc/mark-next-like-this)
+(global-set-key (kbd "C-<")         'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
+
+;; Expand region
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; Move text
+(require 'move-text)
+(move-text-default-bindings)
+
+;; Doom modeline
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+;; Doom themes
+(require 'doom-themes)
+(load-theme 'doom-one t)
+(doom-themes-visual-bell-config)
+(doom-themes-treemacs-config)
+(doom-themes-org-config)
+
+;; Company
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; Yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;; LSP mode
+(require 'lsp-mode)
+(require 'lsp-ui)
+(require 'lsp-treemacs)
+(require 'helm-lsp)
+(require 'company-lsp)
+(add-hook 'prog-mode-hook #'lsp)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
+(push 'company-lsp company-backends)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (rust-mode company-lsp helm-lsp lsp-treemacs lsp-ui lsp-mode yasnippet flycheck company doom-themes doom-modeline move-text expand-region multiple-cursors yascroll anzu treemacs-icons-dired treemacs-magit treemacs-projectile treemacs ace-link ace-window avy magit dashboard projectile all-the-icons sublimity helm)))
+ '(yascroll:delay-to-hide nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
