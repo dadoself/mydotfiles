@@ -9,10 +9,16 @@
 (setq scroll-step 1)
 ;(setq scroll-conservatively 10000)
 
+(setq custom-file "~/.emacs-custom")
+(load custom-file)
+
 ;; Package
 (require 'package)
 (add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/") t)
 (package-initialize)
+
+;; Better defaults
+(require 'better-defaults)
 
 ;; Helm
 (require 'helm-config)
@@ -93,6 +99,7 @@
 ;; Yascroll
 (require 'yascroll)
 (global-yascroll-bar-mode 1)
+(setq yascroll:delay-to-hide nil)
 
 ;; Multiple cursors
 (require 'multiple-cursors)
@@ -137,23 +144,5 @@
 (require 'lsp-ui)
 (require 'lsp-treemacs)
 (require 'helm-lsp)
-(require 'company-lsp)
 (add-hook 'prog-mode-hook #'lsp)
 (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-(push 'company-lsp company-backends)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (rust-mode company-lsp helm-lsp lsp-treemacs lsp-ui lsp-mode yasnippet flycheck company doom-themes doom-modeline move-text expand-region multiple-cursors yascroll anzu treemacs-icons-dired treemacs-magit treemacs-projectile treemacs ace-link ace-window avy magit dashboard projectile all-the-icons sublimity helm)))
- '(yascroll:delay-to-hide nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

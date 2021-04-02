@@ -13,30 +13,31 @@ set $down  j
 set $up    k
 set $right l
 # Your preferred terminal emulator
-set $term urxvt
+set $term alacritty
 # Your preferred application launcher
-set $menu j4-dmenu-desktop --dmenu='bemenu -i' --term='urxvt'
+set $menu j4-dmenu-desktop --dmenu='bemenu -i' --term='$term'
 # Lock command
 set $lock swaylock -c 4c789980
 # Modes
 set $resize "resize"
 set $system "system: [E]xit [L]ock [P]oweroff [R]eboot [S]uspend"
+set $accent "accent"
 
 ### Output configuration
 #
 # Wallpaper
-output * bg /home/dado/Pictures/rickandmorty_ispirational.png fill
+output * bg $(xdg-user-dir PICTURES)/rickandmorty_ispirational.png fill
 output "eDP-1" scale 2
 output "eDP-1" pos 0 0 res 2560x1440
 #output "HDMI"  pos 0 0 res 1920x1080
 
 ### Input configuration
 #
-input "1267:33:Elan_Touchpad" {
+input type:touchpad {
     tap enabled
     natural_scroll enabled
 }
-input "1133:50484:Logitech_USB_Receiver_Mouse" {
+input type:pointer {
     accel_profile flat
 }
 
@@ -187,11 +188,40 @@ mode $system {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+e mode $system
+mode $accent {
+    bindsym a mode "default" ; exec wl-copy "à"
+    bindsym e mode "default" ; exec wl-copy "è"
+    bindsym i mode "default" ; exec wl-copy "ì"
+    bindsym o mode "default" ; exec wl-copy "ò"
+    bindsym u mode "default" ; exec wl-copy "ù"
+
+    bindsym Shift+a mode "default" ; exec wl-copy "À"
+    bindsym Shift+e mode "default" ; exec wl-copy "È"
+    bindsym Shift+i mode "default" ; exec wl-copy "Ì"
+    bindsym Shift+o mode "default" ; exec wl-copy "Ò"
+    bindsym Shift+u mode "default" ; exec wl-copy "Ù"
+
+    bindsym Alt+a mode "default" ; exec wl-copy "á"
+    bindsym Alt+e mode "default" ; exec wl-copy "é"
+    bindsym Alt+i mode "default" ; exec wl-copy "í"
+    bindsym Alt+o mode "default" ; exec wl-copy "ó"
+    bindsym Alt+u mode "default" ; exec wl-copy "ú"
+
+    bindsym Alt+Shift+a mode "default" ; exec wl-copy "Á"
+    bindsym Alt+Shift+e mode "default" ; exec wl-copy "É"
+    bindsym Alt+Shift+i mode "default" ; exec wl-copy "Í"
+    bindsym Alt+Shift+o mode "default" ; exec wl-copy "Ó"
+    bindsym Alt+Shift+u mode "default" ; exec wl-copy "Ú"
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 #
 # Screenshot
 #
-bindsym $mod+Print       exec grim               ~/Pictures/"$(date +"%Y_%m_%d_%H_%M_%S")".png
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" ~/Pictures/"$(date +"%Y_%m_%d_%H_%M_%S")".png
+bindsym $mod+Print       exec grim               $(xdg-user-dir PICTURES)/"$(date +"%Y_%m_%d_%H_%M_%S")".png
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/"$(date +"%Y_%m_%d_%H_%M_%S")".png
 
 #
 # Status Bar:
@@ -204,5 +234,20 @@ bar {
 # Borders:
 #
 default_border pixel
+
+bindsym          --no-repeat XF86AudioMute         exec pactl set-sink-mute   @DEFAULT_SINK@   toggle
+bindsym --locked             XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@   -2%
+bindsym                      XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@   +2%
+bindsym          --no-repeat XF86AudioMicMute      exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym --locked             XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked             XF86MonBrightnessUp   exec brightnessctl set +5%
+bindsym --locked --no-repeat XF86Display           exec backlight_toggle
+
+#bindsym                      XF86Tools             exec swaynag -m Tools
+bindsym                      XF86Keyboard          mode $accent
+#bindsym                      XF86Favorites         exec swaynag -m Favorites
+
+xwayland force
 
 include /etc/sway/config.d/*

@@ -18,5 +18,9 @@ prompt grml
 typeset -U path
 path=(~/.local/bin $path[@])
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+export MOZ_ENABLE_WAYLAND=1
+export VDPAU_DRIVER=va_gl
+export XDG_CURRENT_DESKTOP=Unity
+
 alias mydotfiles='git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
-alias sway='_JAVA_AWT_WM_NONREPARENTING=1 sway'
