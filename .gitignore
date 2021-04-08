@@ -1,8 +1,9 @@
 .cache/
+.cargo/
 .config/GIMP/
+.config/broot/launcher/
 .config/cmus/
 .config/dconf/
-.config/htop/
 .config/pulse/
 .config/sublime-merge/
 .config/sublime-text-3/
@@ -12,6 +13,7 @@
 .gnupg/
 .local/share/Trash/
 .local/share/applications/
+.local/share/broot/
 .local/share/fonts/
 .local/share/iwctl/
 .local/share/ranger/

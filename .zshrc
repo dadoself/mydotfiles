@@ -24,3 +24,5 @@ export VDPAU_DRIVER=va_gl
 export XDG_CURRENT_DESKTOP=Unity
 
 alias mydotfiles='git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
+
+source ~/.config/broot/launcher/bash/br
