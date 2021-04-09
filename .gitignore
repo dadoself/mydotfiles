@@ -7,6 +7,7 @@
 .config/pulse/
 .config/sublime-merge/
 .config/sublime-text-3/
+.config/taskwarrior-tui/
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .emacs.d/
