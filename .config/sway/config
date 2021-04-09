@@ -53,7 +53,7 @@ input type:pointer {
 
     # start your launcher
     bindsym $mod+d       exec $menu --show=drun
-    bindsym $mod+Shift+d exec $menu --show=run
+    bindsym $mod+Shift+d exec kitty -e $SHELL -ic '$(cat ~/.config/wofi/commands | $menu --show=dmenu)'
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

@@ -38,6 +38,7 @@ Videos/
 .histfile
 .lesshst
 .viminfo
+.wget-hsts
 .zcompdump
 .zdirs
 .zsh_history
