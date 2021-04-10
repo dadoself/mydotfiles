@@ -5,6 +5,6 @@ syntax on
 
 set number
 
-colors zenburn
+colors base16-tomorrow-night
 
 inoremap jk <ESC>
