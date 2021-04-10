@@ -4,6 +4,7 @@
 .config/broot/launcher/
 .config/cmus/
 .config/dconf/
+.config/gtk-2.0/
 .config/pulse/
 .config/sublime-merge/
 .config/sublime-text-3/
