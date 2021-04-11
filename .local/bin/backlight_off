@@ -1,0 +1,3 @@
+#!/bin/sh
+swaymsg "output * dpms off"
+echo 0 > /tmp/lcd
