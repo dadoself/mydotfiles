@@ -3,7 +3,25 @@
  * Flat scheme by Chris Kempson (http://chriskempson.com) */
 
 window {
+	border: 2px solid #3498DB;
 	background-color: #2C3E50;
+}
+
+#inner-box {
+	margin: 5px;
+	border: 2px solid #7F8C8D;
+}
+
+#outer-box {
+	margin: 5px;
+}
+
+#scroll {
+	margin: 5px;
+}
+
+#text {
+	margin: 5px;
 	color: #e0e0e0;
 }
 
@@ -20,8 +38,11 @@ window {
 }
 
 #input {
+	margin: 10px 100px;
 	background-color: #34495E;
 	color: #BDC3C7;
+	border: 2px solid;
+	border-radius: 0px;
 	border-color: #7F8C8D; 
 }
 
