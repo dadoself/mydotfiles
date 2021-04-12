@@ -74,7 +74,7 @@ bindsym $mod+Shift+q kill
 
 # Start the launcher
 bindsym $mod+d       exec                               $menu --show=drun --allow-images
-bindsym $mod+Shift+d exec cat ~/.config/wofi/commands | $menu --show=dmenu | xargs $term -e $SHELL -ic
+bindsym $mod+Shift+d exec cat ~/.config/wofi/commands | $menu --show=dmenu | xargs -r $term -e $SHELL -ic
 
 # Screenshot
 bindsym $mod+Print       exec grim               "$(xdg-user-dir PICTURES)/$(date +%Y_%m_%d_%H_%M_%S).png"
