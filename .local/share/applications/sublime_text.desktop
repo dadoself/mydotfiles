@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Sublime Text
+Exec=/opt/sublime_text/sublime_text %F
+Icon=sublime-text
+Type=Application
+Terminal=false
+StartupNotify=true

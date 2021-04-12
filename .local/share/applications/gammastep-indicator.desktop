@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Gammastep
+Exec=gammastep-indicator
+Icon=gammastep
+Type=Application
+Terminal=false
+StartupNotify=true

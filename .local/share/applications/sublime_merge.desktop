@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Sublime Merge
+Exec=/opt/sublime_merge/sublime_merge %F
+Icon=sublime-merge
+Type=Application
+Terminal=false
+StartupNotify=true

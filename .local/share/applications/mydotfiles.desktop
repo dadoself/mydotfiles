@@ -1,6 +1,6 @@
 [Desktop Entry]
-Type=Application
-Name=mydotfiles
+Name=Mydotfiles
 Exec=sh -c "$SHELL -ic \"mydotfiles gui\""
 Icon=applications-system
+Type=Application
 Terminal=false

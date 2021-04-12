@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Emacs
+Exec=emacs %F
+Icon=emacs
+Type=Application
+Terminal=false
+StartupWMClass=Emacs

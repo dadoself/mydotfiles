@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Firefox
+Exec=/usr/lib/firefox/firefox %u
+Icon=firefox
+Type=Application
+Terminal=false
+StartupNotify=true
+StartupWMClass=firefox
+X-MultipleArgs=false
