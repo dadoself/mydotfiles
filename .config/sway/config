@@ -49,8 +49,8 @@ output "eDP-1" resolution 2560x1440 position 0,0
 
 exec swayidle -w \
     timeout 300 '$lock' \
-    timeout 310 'backlight_off' \
-         resume 'backlight_on' \
+    timeout 310 'backlight-off' \
+         resume 'backlight-on' \
     before-sleep '$lock'
 
 ### Input configuration
@@ -178,7 +178,7 @@ bindsym          --no-repeat XF86AudioMicMute      exec pactl set-source-mute @D
 
 bindsym --locked             XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked             XF86MonBrightnessUp   exec brightnessctl set +5%
-bindsym --locked --no-repeat XF86Display           exec backlight_toggle
+bindsym --locked --no-repeat XF86Display           exec backlight-toggle
 
 #bindsym                      XF86Tools             exec swaynag -m Tools
 bindsym                      XF86Keyboard          mode $accent

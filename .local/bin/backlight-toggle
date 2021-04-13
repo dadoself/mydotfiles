@@ -1,7 +1,7 @@
 #!/bin/sh
 read lcd < /tmp/lcd
 if [ "$lcd" -eq "0" ]; then
-    backlight_on
+    backlight-on
 else
-    backlight_off
+    backlight-off
 fi
