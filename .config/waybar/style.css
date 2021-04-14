@@ -141,10 +141,6 @@ label:focus {
     background-color: @base0A;
 }
 
-#pulseaudio.muted {
-    background-color: @base0C;
-}
-
 #temperature {
     background-color: @base09;
 }
