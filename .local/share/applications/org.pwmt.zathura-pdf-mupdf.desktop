@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Zathura
-Exec=zathura %U
-NoDisplay=true
-Type=Application
-Terminal=false
-MimeType=application/pdf;application/oxps;application/epub+zip;application/x-fictionbook;

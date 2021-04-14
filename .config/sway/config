@@ -22,7 +22,7 @@ set $up    k
 set $right l
 
 # Terminal emulator
-set $term kitty
+set $term $TERMINAL
 
 # Application launcher
 set $menu wofi --term=$term

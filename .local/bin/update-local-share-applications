@@ -1,0 +1,64 @@
+#!/bin/sh
+
+DISPLAY_ENTRIES="emacs firefox gammastep-indicator gimp sublime_merge sublime_text"
+TITLE_BY_ENTRIES="gammastep-indicator=Gammastep gimp=GIMP"
+REMOVE_MIMETYPE_FROM="emacs emacsclient firefox gimp sublime_merge sublime_text"
+REMOVE_ACTIONS_FROM="firefox sublime_merge sublime_text"
+
+SOURCE_DIR=/usr/share/applications
+TARGET_DIR=~/.local/share/applications
+
+MY_SOURCE_DIR=~/.local/share/myapplications
+
+for FILE in "$TARGET_DIR"/* ; do
+    [ -e "$FILE" ] || continue
+    rm -r "$FILE"
+done
+
+cp "$SOURCE_DIR"/*.desktop "$TARGET_DIR"
+
+for DESKTOP_FILE in "$TARGET_DIR"/*.desktop ; do
+    [ -f "$DESKTOP_FILE" ] || continue
+    desktop-file-edit \
+        --remove-key=GenericName \
+        --set-key=NoDisplay --set-value=true \
+        "$DESKTOP_FILE"
+done
+
+for ENTRY in $DISPLAY_ENTRIES ; do
+    DESKTOP_FILE="$TARGET_DIR"/"$ENTRY".desktop
+    [ -f "$DESKTOP_FILE" ] || continue
+    desktop-file-edit \
+        --set-key=NoDisplay --set-value=false \
+        "$DESKTOP_FILE"
+done
+
+for TITLE_BY_ENTRY in $TITLE_BY_ENTRIES ; do
+    ENTRY=$(echo "$TITLE_BY_ENTRY" | cut -d= -f1)
+    TITLE=$(echo "$TITLE_BY_ENTRY" | cut -d= -f2-)
+    DESKTOP_FILE="$TARGET_DIR"/"$ENTRY".desktop
+    [ -f "$DESKTOP_FILE" ] || continue
+    desktop-file-edit \
+        --set-name="$TITLE" \
+        "$DESKTOP_FILE"
+done
+
+for ENTRY in $REMOVE_MIMETYPE_FROM ; do
+    DESKTOP_FILE="$TARGET_DIR"/"$ENTRY".desktop
+    [ -f "$DESKTOP_FILE" ] || continue
+    desktop-file-edit \
+        --remove-key=MimeType \
+        "$DESKTOP_FILE"
+done
+
+for ENTRY in $REMOVE_ACTIONS_FROM ; do
+    DESKTOP_FILE="$TARGET_DIR"/"$ENTRY".desktop
+    [ -f "$DESKTOP_FILE" ] || continue
+    desktop-file-edit \
+        --remove-key=Actions \
+        "$DESKTOP_FILE"
+done
+
+cp "$MY_SOURCE_DIR"/*.desktop "$TARGET_DIR"
+
+update-desktop-database "$TARGET_DIR"
