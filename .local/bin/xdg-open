@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ "$@" = "--help"    ] || \
+   [ "$@" = "--manual"  ] || \
+   [ "$@" = "--version" ]; then
+    /usr/bin/xdg-open "$@"
+else
+    exec mimeopen -n "$@"
+fi

@@ -28,6 +28,7 @@
 .local/share/zathura/
 .mozilla/
 .mydotfiles/
+.python_history
 .ssh/
 .task/
 .timewarrior/

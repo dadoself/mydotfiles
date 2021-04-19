@@ -31,9 +31,10 @@ set $menu wofi --term=$term
 set $lock swaylock -f -c "$base00"
 
 # Modes
-set $accent "accent"
-set $resize "resize"
-set $system "system: [E]xit [L]ock [P]oweroff [R]eboot [S]uspend"
+set $accent1 "accent: àèìòù"
+set $accent2 "accent: áéíóú"
+set $resize  "resize"
+set $system  "system: [E]xit [L]ock [P]oweroff [R]eboot [S]uspend"
 
 ### Output configuration
 
@@ -153,6 +154,7 @@ bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+s     sticky   toggle
 
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
@@ -181,37 +183,47 @@ bindsym --locked             XF86MonBrightnessUp   exec brightnessctl set +5%
 bindsym --locked --no-repeat XF86Display           exec backlight-toggle
 
 #bindsym                      XF86Tools             exec swaynag -m Tools
-bindsym                      XF86Keyboard          mode $accent
+bindsym                      XF86Keyboard          mode $accent1
 #bindsym                      XF86Favorites         exec swaynag -m Favorites
 
 ## Modes
 
 # Accent commands
 
-mode $accent {
-    bindsym a mode "default" ; exec wl-copy "à"
-    bindsym e mode "default" ; exec wl-copy "è"
-    bindsym i mode "default" ; exec wl-copy "ì"
-    bindsym o mode "default" ; exec wl-copy "ò"
-    bindsym u mode "default" ; exec wl-copy "ù"
+mode $accent1 {
+    bindsym a mode "default" ; exec wtype "à"
+    bindsym e mode "default" ; exec wtype "è"
+    bindsym i mode "default" ; exec wtype "ì"
+    bindsym o mode "default" ; exec wtype "ò"
+    bindsym u mode "default" ; exec wtype "ù"
 
-    bindsym Shift+a mode "default" ; exec wl-copy "À"
-    bindsym Shift+e mode "default" ; exec wl-copy "È"
-    bindsym Shift+i mode "default" ; exec wl-copy "Ì"
-    bindsym Shift+o mode "default" ; exec wl-copy "Ò"
-    bindsym Shift+u mode "default" ; exec wl-copy "Ù"
+    bindsym Shift+a mode "default" ; exec wtype "À"
+    bindsym Shift+e mode "default" ; exec wtype "È"
+    bindsym Shift+i mode "default" ; exec wtype "Ì"
+    bindsym Shift+o mode "default" ; exec wtype "Ò"
+    bindsym Shift+u mode "default" ; exec wtype "Ù"
 
-    bindsym Alt+a mode "default" ; exec wl-copy "á"
-    bindsym Alt+e mode "default" ; exec wl-copy "é"
-    bindsym Alt+i mode "default" ; exec wl-copy "í"
-    bindsym Alt+o mode "default" ; exec wl-copy "ó"
-    bindsym Alt+u mode "default" ; exec wl-copy "ú"
+    bindsym XF86Keyboard mode $accent2
 
-    bindsym Alt+Shift+a mode "default" ; exec wl-copy "Á"
-    bindsym Alt+Shift+e mode "default" ; exec wl-copy "É"
-    bindsym Alt+Shift+i mode "default" ; exec wl-copy "Í"
-    bindsym Alt+Shift+o mode "default" ; exec wl-copy "Ó"
-    bindsym Alt+Shift+u mode "default" ; exec wl-copy "Ú"
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode $accent2 {
+    bindsym a mode "default" ; exec wtype "á"
+    bindsym e mode "default" ; exec wtype "é"
+    bindsym i mode "default" ; exec wtype "í"
+    bindsym o mode "default" ; exec wtype "ó"
+    bindsym u mode "default" ; exec wtype "ú"
+
+    bindsym Shift+a mode "default" ; exec wtype "Á"
+    bindsym Shift+e mode "default" ; exec wtype "É"
+    bindsym Shift+i mode "default" ; exec wtype "Í"
+    bindsym Shift+o mode "default" ; exec wtype "Ó"
+    bindsym Shift+u mode "default" ; exec wtype "Ú"
+
+    bindsym XF86Keyboard mode $accent1
 
     # Return to default mode
     bindsym Return mode "default"
