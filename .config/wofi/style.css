@@ -3,45 +3,45 @@
  * Flat scheme by Chris Kempson (http://chriskempson.com) */
 
 window {
-	border: 2px solid #3498DB;
-	background-color: #2C3E50;
+    border: 2px solid #3498DB;
+    background-color: #2C3E50;
 }
 
 #outer-box {
-	margin: 10px;
+    margin: 10px;
 }
 
 #scroll {
-	margin: 10px;
-	border: 2px solid #7F8C8D;
+    margin: 10px;
+    border: 2px solid #7F8C8D;
 }
 
 #text {
-	margin: 5px;
-	color: #e0e0e0;
+    margin: 5px;
+    color: #e0e0e0;
 }
 
 #entry:nth-child(odd) {
-	background-color: #2C3E50;
+    background-color: #2C3E50;
 }
 
 #entry:nth-child(even) {
-	background-color: #34495E;
+    background-color: #34495E;
 }
 
 #entry:selected {
-	background-color: #7F8C8D;
+    background-color: #7F8C8D;
 }
 
 #input {
-	margin: 10px 100px;
-	background-color: #34495E;
-	color: #BDC3C7;
-	border: 2px solid;
-	border-radius: 0px;
-	border-color: #7F8C8D; 
+    margin: 10px 100px;
+    background-color: #34495E;
+    color: #BDC3C7;
+    border: 2px solid;
+    border-radius: 0px;
+    border-color: #7F8C8D;
 }
 
 #input:focus {
-	border-color: #F1C40F; 
+    border-color: #F1C40F;
 }

@@ -1,35 +1,35 @@
 {
-	verbs: [
-		{
-			name: touch
-			invocation: touch {new_file}
-			execution: "touch {directory}/{new_file}"
-			leave_broot: false
-		}
+    verbs: [
+        {
+            name: touch
+            invocation: touch {new_file}
+            execution: "touch {directory}/{new_file}"
+            leave_broot: false
+        }
 
-		{
-			invocation: home
-			key: ctrl-home
-			execution: ":focus ~"
-		}
+        {
+            invocation: home
+            key: ctrl-home
+            execution: ":focus ~"
+        }
 
-		{
-			key: ctrl-g
-			execution: ":toggle_git_status"
-		}
+        {
+            key: ctrl-g
+            execution: ":toggle_git_status"
+        }
 
-		{
-			invocation: drag
-			execution: "dragon-drag-and-drop {file}"
-			key: ctrl-d
-			leave_broot: false
-		}
+        {
+            invocation: drag
+            execution: "dragon-drag-and-drop {file}"
+            key: ctrl-d
+            leave_broot: false
+        }
 
-		{
-			invocation: trash
-			execution: "trash-put {file}"
-			key: ctrl-t
-			leave_broot: false
-		}
-	]
+        {
+            invocation: trash
+            execution: "trash-put {file}"
+            key: ctrl-t
+            leave_broot: false
+        }
+    ]
 }
