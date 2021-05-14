@@ -1,0 +1,3 @@
+#!/bin/sh
+command=$(cat ~/.config/wofi/commands | wofi --show=dmenu)
+exec run-in-terminal run-in-shell "$command"
