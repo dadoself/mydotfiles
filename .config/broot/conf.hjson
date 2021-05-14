@@ -1,9 +1,19 @@
 {
+    show_selection_mark: true
+
     verbs: [
         {
             name: touch
             invocation: touch {new_file}
             execution: "touch {directory}/{new_file}"
+            leave_broot: false
+        }
+
+        {
+            invocation: terminal
+            key: ctrl-t
+            execution: "$SHELL"
+            set_working_dir: true
             leave_broot: false
         }
 
@@ -20,15 +30,21 @@
 
         {
             invocation: drag
-            execution: "dragon-drag-and-drop {file}"
             key: ctrl-d
+            execution: "dragon-drag-and-drop {file}"
+            leave_broot: false
+        }
+
+        {
+            invocation: extract {new_directory}
+            execution: "7z x -o{directory}/{new_directory} {file}"
             leave_broot: false
         }
 
         {
             invocation: trash
+            key: ctrl-delete
             execution: "trash-put {file}"
-            key: ctrl-t
             leave_broot: false
         }
     ]
