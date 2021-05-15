@@ -8,6 +8,6 @@ set number
 set shiftwidth=4
 set tabstop=4
 
-colors base16-tomorrow-night
+colors theme
 
 inoremap jk <ESC>

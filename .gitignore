@@ -8,12 +8,15 @@
 .config/dconf/
 .config/gtk-2.0/
 .config/htop/
+.config/kitty/theme.conf
 .config/pulse/
 .config/sublime-merge/
 .config/sublime-text-3/
+.config/sway/theme.config
 .config/taskwarrior-tui/
 .config/user-dirs.dirs
 .config/user-dirs.locale
+.config/waybar/theme.css
 .emacs.d/
 .gnupg/
 .histfile
@@ -33,6 +36,7 @@
 .task/
 .timewarrior/
 .vim/.netrwhist
+.vim/colors/theme.vim
 .viminfo
 .wget-hsts
 .zcompdump
