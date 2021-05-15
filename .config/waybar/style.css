@@ -4,15 +4,14 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: DejaVu Sans;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: @base00;
-    border-bottom: 3px solid @base03;
-    color: @base03;
+    background-color: rgba(40, 44, 52, 0.5);
+    color: @base07;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -23,40 +22,37 @@ window#waybar.hidden {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: @base01;
-    color: @base05;
+    background-color: transparent;
+    color: @base07;
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px @base03;
+    box-shadow: inset 0 2px transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background-color: @base0D;
-    box-shadow: inset 0 -3px @base05;
-    color: @base00;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px @base07;
 }
 
 #workspaces button.focused {
-    background-color: @base03;
-    box-shadow: inset 0 -3px @base05;
-    color: @base00;
+    background-color: @base04;
+    box-shadow: inset 0 2px @base0D;
 }
 
 #workspaces button.urgent {
     background-color: @base08;
-    box-shadow: inset 0 -3px @base08;
-    color: @base00;
 }
 
 #mode {
-    background-color: @base0A;
-    border-bottom: 3px solid @base03;
+    background-color: @base04;
+    border-top: 2px solid @base0D;
 }
 
 #clock,
 #battery,
 #cpu,
 #memory,
+#disk,
 #temperature,
 #backlight,
 #network,
@@ -68,7 +64,7 @@ window#waybar.hidden {
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
-    color: @base00;
+    color: @base07;
 }
 
 #window,
@@ -87,78 +83,83 @@ window#waybar.hidden {
 }
 
 #clock {
-    background-color: @base03;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #battery {
-    background-color: @base06;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
-#battery.charging {
-    background-color: @base0B;
-}
-
-@keyframes blink {
-    to {
-        background-color: @base07;
-    }
+#battery.charging, #battery.plugged {
+    border-top: 2px solid @base0B;
 }
 
 #battery.critical:not(.charging) {
     background-color: @base08;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    border-top: 2px solid @base08;
 }
 
 label:focus {
-    background-color: @base07;
+    background-color: @base00;
 }
 
 #cpu {
-    background-color: @base0B;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #memory {
-    background-color: @base0E;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
+}
+
+#disk {
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #backlight {
-    background-color: @base0C;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #network {
-    background-color: @base0D;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #network.disconnected {
-    background-color: @base08;
+    border-top: 2px solid @base08;
 }
 
 #pulseaudio {
-    background-color: @base0A;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #temperature {
-    background-color: @base09;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #temperature.critical {
     background-color: @base08;
+    border-top: 2px solid @base08;
 }
 
 #tray {
-    background-color: @base0D;
+    background-color: transparent;
+    border-top: 2px solid @base0D;
 }
 
 #idle_inhibitor {
-    background-color: @base00;
-    color: @base03;
+    background-color: transparent;
+    border-top: 2px solid @base07;
 }
 
 #idle_inhibitor.activated {
-    background-color: @base03;
-    color: @base00;
+    background-color: @base04;
+    border-top: 2px solid @base0D;
 }
