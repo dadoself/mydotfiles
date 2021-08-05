@@ -67,17 +67,22 @@ input type:pointer {
     accel_profile flat
 }
 
+seat * {
+    hide_cursor 3000
+    hide_cursor when-typing enable
+}
+
 ### Key bindings
 
 # Start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec run-in-scope $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
 # Start the launcher
-bindsym $mod+d       exec $app_menu
-bindsym $mod+Shift+d exec $com_menu
+bindsym $mod+d       exec run-in-scope $app_menu
+bindsym $mod+Shift+d exec run-in-scope $com_menu
 
 # Screenshot
 bindsym $mod+Print       exec grim               "$(xdg-user-dir PICTURES)/$(date +%Y_%m_%d_%H_%M_%S).png"
@@ -102,6 +107,9 @@ bindsym $mod+Left  focus left
 bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
+# Or use Alt+Tab
+bindsym Alt+Tab       focus next
+bindsym Alt+Shift+Tab focus prev
 
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left  move left
@@ -127,6 +135,8 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+# Or use $mod+Tab
+bindsym $mod+Tab workspace back_and_forth
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -139,6 +149,8 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+# Or use $mod+Shift+Tab
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
 ## Layout stuff:
 
@@ -161,8 +173,9 @@ bindsym $mod+Shift+s     sticky   toggle
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
 
-# Move focus to the parent container
-bindsym $mod+a focus parent
+# Move focus to the child/parent container
+bindsym $mod+a       focus child
+bindsym $mod+Shift+a focus parent
 
 ## Scratchpad:
 
@@ -280,6 +293,10 @@ bar {
 
 # Borders
 default_border pixel
+
+# Gaps
+gaps inner 10
+gaps outer  0
 
 xwayland force
 

@@ -1,0 +1,4 @@
+#!/bin/sh
+name=$(systemd-escape "$*" | cut -c -200)
+tmp=$(mktemp --dry-run XXXXXXXXXX)
+exec systemd-run --unit="$name.$tmp" --user --scope "$@"

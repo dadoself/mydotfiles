@@ -4,5 +4,5 @@ if [ "$@" = "--help"    ] || \
    [ "$@" = "--version" ]; then
     /usr/bin/xdg-open "$@"
 else
-    exec mimeopen -n "$@"
+    exec run-in-scope mimeopen -n "$@"
 fi

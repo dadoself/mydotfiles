@@ -1,9 +1,10 @@
 #!/bin/sh
 
+COPY_ENTRIES="emacs firefox gammastep-indicator gimp imv mpv org.pwmt.zathura-pdf-mupdf sublime_merge sublime_text vim"
 DISPLAY_ENTRIES="emacs firefox gammastep-indicator gimp sublime_merge sublime_text"
 TITLE_BY_ENTRIES="gammastep-indicator=Gammastep gimp=GIMP"
-REMOVE_MIMETYPE_FROM="emacs emacsclient firefox gimp sublime_merge sublime_text"
-REMOVE_ACTIONS_FROM="firefox sublime_merge sublime_text"
+REMOVE_MIMETYPE_FROM="emacs firefox gimp sublime_merge sublime_text"
+REMOVE_ACTIONS_FROM=""
 
 SOURCE_DIR=/usr/share/applications
 TARGET_DIR=~/.local/share/applications
@@ -21,10 +22,20 @@ cp "$SOURCE_DIR"/*.desktop "$TARGET_DIR"
 
 for DESKTOP_FILE in "$TARGET_DIR"/*.desktop ; do
     [ -f "$DESKTOP_FILE" ] || continue
+    echo "[Desktop Entry]" > "$DESKTOP_FILE"
+    echo "NoDisplay=true" >> "$DESKTOP_FILE"
+done
+
+for ENTRY in $COPY_ENTRIES ; do
+    SOURCE_FILE="$SOURCE_DIR"/"$ENTRY".desktop
+    TARGET_FILE="$TARGET_DIR"/"$ENTRY".desktop
+    [ -f "$SOURCE_FILE" ] || continue
+    [ -f "$TARGET_FILE" ] || continue
+    cp "$SOURCE_FILE" "$TARGET_FILE"
     desktop-file-edit \
         --remove-key=GenericName \
         --set-key=NoDisplay --set-value=true \
-        "$DESKTOP_FILE"
+        "$TARGET_FILE"
 done
 
 for ENTRY in $DISPLAY_ENTRIES ; do

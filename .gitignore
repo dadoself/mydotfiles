@@ -9,6 +9,7 @@
 .config/gtk-2.0/
 .config/htop/
 .config/kitty/theme.conf
+.config/pipewire/
 .config/pulse/
 .config/sublime-merge/
 .config/sublime-text-3/
