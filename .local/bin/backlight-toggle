@@ -1,5 +1,5 @@
 #!/bin/sh
-read lcd < /tmp/lcd
+read -r lcd < /tmp/lcd
 if [ "$lcd" -eq "0" ]; then
     backlight-on
 else

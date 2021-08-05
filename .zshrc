@@ -3,7 +3,7 @@ unsetopt appendhistory autocd beep extendedglob extendedhistory notify correct c
 
 bindkey -e
 
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit promptinit
 compinit

@@ -1,5 +1,5 @@
 #!/bin/sh
-command=$(cat ~/.config/bemenu/commands | bemenu "$@")
+command=$(bemenu "$@" < ~/.config/bemenu/commands)
 if [ -n "$command" ]; then
     exec run-in-terminal run-in-shell "$command"
 fi
