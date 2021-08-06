@@ -3,6 +3,10 @@ unsetopt appendhistory autocd beep extendedglob extendedhistory notify correct c
 
 bindkey -e
 
+export BEMENU_BACKEND=curses
+
+source ~/.config/broot/launcher/bash/br
+
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit promptinit
@@ -10,5 +14,3 @@ compinit
 promptinit
 
 prompt grml
-
-source ~/.config/broot/launcher/bash/br
