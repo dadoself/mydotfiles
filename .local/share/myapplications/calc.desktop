@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Calc
+Exec=calc
+Terminal=true

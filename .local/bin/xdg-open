@@ -1,8 +1,2 @@
 #!/bin/sh
-if [ "$*" = "--help"    ] || \
-   [ "$*" = "--manual"  ] || \
-   [ "$*" = "--version" ]; then
-    /usr/bin/xdg-open "$@"
-else
-    exec run-in-scope mimeopen -n "$@"
-fi
+exec run-in-scope handlr open "$@"

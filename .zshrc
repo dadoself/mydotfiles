@@ -11,6 +11,4 @@ promptinit
 
 prompt grml
 
-alias mydotfiles='git --git-dir=$HOME/.mydotfiles/ --work-tree=$HOME'
-
 source ~/.config/broot/launcher/bash/br

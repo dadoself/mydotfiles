@@ -1,10 +1,9 @@
 #!/bin/sh
 
-COPY_ENTRIES="emacs firefox gammastep-indicator gimp imv mpv org.pwmt.zathura-pdf-mupdf sublime_merge sublime_text vim"
-DISPLAY_ENTRIES="emacs firefox gammastep-indicator gimp sublime_merge sublime_text"
+COPY_ENTRIES="emacs firefox gammastep-indicator gimp htop imv kitty mpv org.pwmt.zathura-pdf-mupdf sublime_merge sublime_text vim"
+DISPLAY_ENTRIES="emacs firefox gammastep-indicator gimp htop sublime_merge sublime_text"
 TITLE_BY_ENTRIES="gammastep-indicator=Gammastep gimp=GIMP"
 REMOVE_MIMETYPE_FROM="emacs firefox gimp sublime_merge sublime_text"
-REMOVE_ACTIONS_FROM=""
 
 SOURCE_DIR=/usr/share/applications
 TARGET_DIR=~/.local/share/applications
@@ -33,7 +32,6 @@ for ENTRY in $COPY_ENTRIES ; do
     [ -f "$TARGET_FILE" ] || continue
     cp "$SOURCE_FILE" "$TARGET_FILE"
     desktop-file-edit \
-        --remove-key=GenericName \
         --set-key=NoDisplay --set-value=true \
         "$TARGET_FILE"
 done
@@ -61,14 +59,6 @@ for ENTRY in $REMOVE_MIMETYPE_FROM ; do
     [ -f "$DESKTOP_FILE" ] || continue
     desktop-file-edit \
         --remove-key=MimeType \
-        "$DESKTOP_FILE"
-done
-
-for ENTRY in $REMOVE_ACTIONS_FROM ; do
-    DESKTOP_FILE="$TARGET_DIR"/"$ENTRY".desktop
-    [ -f "$DESKTOP_FILE" ] || continue
-    desktop-file-edit \
-        --remove-key=Actions \
         "$DESKTOP_FILE"
 done
 

@@ -1,5 +1,0 @@
-#!/bin/sh
-command=$(bemenu "$@" < ~/.config/bemenu/commands)
-if [ -n "$command" ]; then
-    exec run-in-terminal run-in-shell "$command"
-fi

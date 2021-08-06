@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=Mydotfiles
-Exec=run-in-shell mydotfiles gui
+Exec=mydotfiles gui
 Terminal=false

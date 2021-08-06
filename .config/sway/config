@@ -25,9 +25,9 @@ set $right l
 set $term $TERMINAL
 
 # Application launcher
-set $bemenu_args -i -l 10 --tb "$base0D" --tf "$base00" --fb "$base00" --ff "$base05" --nb "$base00" --nf "$base05" --hb "$base0D" --hf "$base00"
-set $app_menu j4-dmenu-desktop --dmenu='bemenu $bemenu_args' --term='$term'
-set $com_menu bemenu-commands $bemenu_args
+set $bemenu_args -i -l 20 --tb "$base0D" --tf "$base00" --fb "$base00" --ff "$base05" --nb "$base00" --nf "$base05" --hb "$base0D" --hf "$base00"
+set $app_menu j4-dmenu-desktop --dmenu='bemenu $bemenu_args' --no-generic --term='$term' --wrapper='run-in-scope-quoted'
+set $com_menu $app_menu
 
 # Lock command
 set $lock swaylock -f -c "$base00"
@@ -81,8 +81,8 @@ bindsym $mod+Return exec run-in-scope $term
 bindsym $mod+Shift+q kill
 
 # Start the launcher
-bindsym $mod+d       exec run-in-scope $app_menu
-bindsym $mod+Shift+d exec run-in-scope $com_menu
+bindsym $mod+d       exec $app_menu
+bindsym $mod+Shift+d exec $com_menu
 
 # Screenshot
 bindsym $mod+Print       exec grim               "$(xdg-user-dir PICTURES)/$(date +%Y_%m_%d_%H_%M_%S).png"
