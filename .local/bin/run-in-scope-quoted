@@ -1,2 +1,3 @@
 #!/bin/sh
-echo "$@" | xargs run-in-scope
+command=$(echo "$@" | xargs echo)
+exec run-in-scope $command
