@@ -26,11 +26,13 @@
 .local/share/Trash/
 .local/share/applications/
 .local/share/broot/
+.local/share/clipman.json
 .local/share/fonts/
 .local/share/iwctl/
 .local/share/ranger/
 .local/share/recently-used.xbel
 .local/share/zathura/
+.local/state/pipewire/
 .mozilla/
 .mydotfiles/
 .python_history
@@ -49,6 +51,7 @@ Documents/
 Downloads/
 Music/
 Pictures/
+Projects/
 Public/
 Templates/
 Videos/
