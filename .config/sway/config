@@ -28,7 +28,6 @@ set $term $TERMINAL
 set $bemenu_args -i -l 20 --tb "$base0D" --tf "$base00" --fb "$base00" --ff "$base05" --nb "$base00" --nf "$base05" --hb "$base0D" --hf "$base00"
 set $app_menu j4-dmenu-desktop --dmenu='bemenu $bemenu_args' --no-generic --term='$term' --wrapper='run-in-scope-quoted'
 set $com_menu $app_menu
-set $clipboard_pick clipman pick -t CUSTOM -T 'bemenu $bemenu_args'
 
 # Lock command
 set $lock swaylock -f -c "$base00"
@@ -57,11 +56,6 @@ exec swayidle -w \
          resume 'backlight-on' \
     before-sleep '$lock'
 
-### Clipboard configuration
-
-exec wl-paste -t text -w clipman store
-exec clipman restore
-
 ### Input configuration
 
 input type:touchpad {
@@ -89,7 +83,6 @@ bindsym $mod+Shift+q kill
 # Start the launcher
 bindsym $mod+d       exec $app_menu
 bindsym $mod+Shift+d exec $com_menu
-bindsym $mod+Shift+v exec $clipboard_pick
 
 # Screenshot
 bindsym $mod+Print       exec grim               "$(xdg-user-dir PICTURES)/$(date +%Y_%m_%d_%H_%M_%S).png"

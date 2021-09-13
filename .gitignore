@@ -26,7 +26,6 @@
 .local/share/Trash/
 .local/share/applications/
 .local/share/broot/
-.local/share/clipman.json
 .local/share/fonts/
 .local/share/iwctl/
 .local/share/ranger/
