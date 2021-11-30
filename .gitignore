@@ -45,6 +45,7 @@
 .local/share/fonts/
 .local/share/gvfs-metadata/
 .local/share/iwctl/
+.local/share/kotlin/
 .local/share/ranger/
 .local/share/recently-used.*
 .local/share/user-places.*
