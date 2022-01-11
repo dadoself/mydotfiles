@@ -5,6 +5,7 @@
 .config/Android Open Source Project/
 .config/GIMP/
 .config/Google/
+.config/Postman/
 .config/Slack/
 .config/broot/launcher/
 .config/chromium/
@@ -51,6 +52,7 @@
 .local/share/user-places.*
 .local/share/zathura/
 .local/state/pipewire/
+.m2/
 .mozilla/
 .mydotfiles/
 .pki/
@@ -65,6 +67,7 @@
 .zcompdump
 .zdirs
 Android/
+Apps/
 Desktop/
 Documents/
 Downloads/

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ~/Apps/android-studio/bin/studio.sh

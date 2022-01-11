@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Android Studio
+Exec=android-studio
+Terminal=false
