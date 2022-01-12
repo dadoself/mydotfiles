@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Scrcpy
+Exec=scrcpy -Stw --power-off-on-close --forward-all-clicks
+Terminal=false
