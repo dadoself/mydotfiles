@@ -1,7 +1,7 @@
 {
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "pulseaudio#source", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
     "sway/workspaces": {
         "disable-scroll": true
     },
@@ -54,16 +54,19 @@
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -73,19 +76,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click":       "pactl set-sink-mute   @DEFAULT_SINK@ toggle",
-        "on-scroll-up":   "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%"
-    },
-    "pulseaudio#source": {
-        "format": "{format_source}",
-        "format-bluetooth": "{format_source}",
-        "format-bluetooth-muted": "{format_source}",
-        "format-muted": "{format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "on-click":       "pactl set-source-mute   @DEFAULT_SOURCE@ toggle",
-        "on-scroll-up":   "pactl set-source-volume @DEFAULT_SOURCE@ +2%",
-        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -2%"
+        "on-click":        "pactl set-sink-mute   @DEFAULT_SINK@   toggle",
+        "on-click-right":  "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "pavucontrol"
     }
 }

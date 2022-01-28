@@ -16,6 +16,7 @@
 .config/htop/
 .config/kitty/theme.conf
 .config/libfm/
+.config/pavucontrol.ini
 .config/pcmanfm/
 .config/pipewire/
 .config/pulse/
@@ -29,6 +30,7 @@
 .config/xarchiver/
 .emacs.d/
 .emulator_console_auth_token
+.eteks/sweethome3d/
 .git-credentials
 .gnupg/
 .gradle/
@@ -49,6 +51,7 @@
 .local/share/kotlin/
 .local/share/ranger/
 .local/share/recently-used.*
+.local/share/taskwarrior-tui/
 .local/share/user-places.*
 .local/share/zathura/
 .local/state/pipewire/
