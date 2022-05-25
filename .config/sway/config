@@ -42,12 +42,22 @@ set $system "system: [E]xit [L]ock [P]oweroff [R]eboot [S]uspend"
 output * bg "$(xdg-user-dir PICTURES)/rickandmorty_ispirational.png" fill
 
 # Outputs
+
+# Horizontal HDMI
 output "eDP-1"    scale 2
-output "eDP-1"    resolution 2560x1440 position 1080,1200
+output "eDP-1"    resolution 2560x1440 position 1920,360
 output "eDP-1"    subpixel rgb
 output "HDMI-A-2" scale 1
-output "HDMI-A-2" resolution 1920x1080 position 0,0 transform 90
+output "HDMI-A-2" resolution 1920x1080 position 0,0
 output "HDMI-A-2" subpixel rgb
+
+# Vertical HDMI
+#output "eDP-1"    scale 2
+#output "eDP-1"    resolution 2560x1440 position 1080,1200
+#output "eDP-1"    subpixel rgb
+#output "HDMI-A-2" scale 1
+#output "HDMI-A-2" resolution 1920x1080 position 0,0 transform 90
+#output "HDMI-A-2" subpixel rgb
 
 ### Idle configuration
 
@@ -130,31 +140,43 @@ bindsym $mod+Shift+Right move right
 
 ## Workspaces:
 
+# Assign workspaces to outputs
+workspace  "1st" output "HDMI-A-2"
+workspace  "2nd" output "HDMI-A-2"
+workspace  "3rd" output "HDMI-A-2"
+workspace  "4th" output "HDMI-A-2"
+workspace  "5th" output "HDMI-A-2"
+workspace  "6th" output "eDP-1"
+workspace  "7th" output "eDP-1"
+workspace  "8th" output "eDP-1"
+workspace  "9th" output "eDP-1"
+workspace "10th" output "eDP-1"
+
 # Switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+bindsym $mod+1 workspace  "1st"
+bindsym $mod+2 workspace  "2nd"
+bindsym $mod+3 workspace  "3rd"
+bindsym $mod+4 workspace  "4th"
+bindsym $mod+5 workspace  "5th"
+bindsym $mod+6 workspace  "6th"
+bindsym $mod+7 workspace  "7th"
+bindsym $mod+8 workspace  "8th"
+bindsym $mod+9 workspace  "9th"
+bindsym $mod+0 workspace "10th"
 # Or use $mod+Tab
 bindsym $mod+Tab workspace back_and_forth
 
 # Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace  "1st"
+bindsym $mod+Shift+2 move container to workspace  "2nd"
+bindsym $mod+Shift+3 move container to workspace  "3rd"
+bindsym $mod+Shift+4 move container to workspace  "4th"
+bindsym $mod+Shift+5 move container to workspace  "5th"
+bindsym $mod+Shift+6 move container to workspace  "6th"
+bindsym $mod+Shift+7 move container to workspace  "7th"
+bindsym $mod+Shift+8 move container to workspace  "8th"
+bindsym $mod+Shift+9 move container to workspace  "9th"
+bindsym $mod+Shift+0 move container to workspace "10th"
 # Or use $mod+Shift+Tab
 bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
@@ -259,8 +281,8 @@ bar {
 default_border pixel
 
 # Gaps
-gaps inner 10
-gaps outer  0
+gaps inner 0
+gaps outer 0
 
 xwayland force
 
