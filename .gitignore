@@ -12,6 +12,7 @@
 .config/cmus/
 .config/dconf/
 .config/gtk-2.0/
+.config/gtk-3.0/
 .config/handlr/
 .config/htop/
 .config/kitty/theme.conf

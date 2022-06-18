@@ -141,16 +141,16 @@ bindsym $mod+Shift+Right move right
 ## Workspaces:
 
 # Assign workspace names
-set $ws1   "1st"
-set $ws2   "2nd"
-set $ws3   "3rd"
-set $ws4   "4th"
-set $ws5   "5th"
-set $ws6   "6th"
-set $ws7   "7th"
-set $ws8   "8th"
-set $ws9   "9th"
-set $ws10 "10th"
+set $ws1   1st
+set $ws2   2nd
+set $ws3   3rd
+set $ws4   4th
+set $ws5   5th
+set $ws6   6th
+set $ws7   7th
+set $ws8   8th
+set $ws9   9th
+set $ws10 10th
 
 # Assign workspaces to outputs
 workspace $ws1  output "HDMI-A-2"
@@ -296,6 +296,10 @@ default_border pixel
 gaps inner 0
 gaps outer 0
 
+# XWayland
 xwayland force
+
+# Autostart
+exec run-in-scope blueman-applet
 
 include /etc/sway/config.d/*

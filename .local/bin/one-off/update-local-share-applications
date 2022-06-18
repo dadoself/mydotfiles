@@ -1,8 +1,8 @@
 #!/bin/sh
 
-COPY_ENTRIES="chromium emacs firefox gammastep-indicator gimp htop imv kitty mpv org.gnome.Cheese org.pwmt.zathura-pdf-mupdf pcmanfm sublime_merge sublime_text sweethome3d vim xarchiver"
-DISPLAY_ENTRIES="chromium emacs firefox gammastep-indicator gimp htop org.gnome.Cheese pcmanfm sublime_merge sublime_text sweethome3d"
-TITLE_BY_ENTRIES="gammastep-indicator=Gammastep gimp=GIMP"
+COPY_ENTRIES="blueman-manager chromium emacs firefox gammastep-indicator gimp htop imv-folder kitty mpv org.pwmt.zathura-pdf-mupdf pcmanfm sublime_merge sublime_text vim xarchiver"
+DISPLAY_ENTRIES="blueman-manager chromium emacs firefox gammastep-indicator gimp htop pcmanfm sublime_merge sublime_text"
+TITLE_BY_ENTRIES="gammastep-indicator=Gammastep gimp=GIMP pcmanfm=File_Manager"
 REMOVE_MIMETYPE_FROM="chromium emacs firefox gimp sublime_merge sublime_text"
 
 SOURCE_DIR=/usr/share/applications
@@ -50,7 +50,7 @@ for TITLE_BY_ENTRY in $TITLE_BY_ENTRIES ; do
     DESKTOP_FILE="$TARGET_DIR"/"$ENTRY".desktop
     [ -f "$DESKTOP_FILE" ] || continue
     desktop-file-edit \
-        --set-name="$TITLE" \
+        --set-name="${TITLE//_/ }" \
         "$DESKTOP_FILE"
 done
 
