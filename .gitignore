@@ -5,6 +5,7 @@
 .config/Android Open Source Project/
 .config/GIMP/
 .config/Google/
+.config/Mattermost/
 .config/Postman/
 .config/Slack/
 .config/broot/launcher/
@@ -15,6 +16,7 @@
 .config/gtk-3.0/
 .config/handlr/
 .config/htop/
+.config/inkscape/
 .config/kitty/theme.conf
 .config/libfm/
 .config/pavucontrol.ini
@@ -31,17 +33,19 @@
 .config/xarchiver/
 .emacs.d/
 .emulator_console_auth_token
-.eteks/sweethome3d/
 .git-credentials
 .gnupg/
+.gradle-kotlin-dsl/
 .gradle/
 .gtk-bookmarks
 .histfile
 .ideavimrc
 .java/
+.keychain/
 .lesshst
 .local/share/Android Open Source Project/
 .local/share/Google/
+.local/share/Icons8/
 .local/share/RecentDocuments/
 .local/share/Trash/
 .local/share/applications/
@@ -56,6 +60,7 @@
 .local/share/user-places.*
 .local/share/zathura/
 .local/state/pipewire/
+.local/state/wireplumber/
 .m2/
 .mozilla/
 .mydotfiles/
@@ -71,6 +76,7 @@
 .zcompdump
 .zdirs
 Android/
+AndroidStudioProjects/
 Apps/
 Desktop/
 Documents/
