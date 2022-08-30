@@ -54,6 +54,7 @@
 .local/share/gvfs-metadata/
 .local/share/iwctl/
 .local/share/kotlin/
+.local/share/meld/
 .local/share/ranger/
 .local/share/recently-used.*
 .local/share/taskwarrior-tui/
