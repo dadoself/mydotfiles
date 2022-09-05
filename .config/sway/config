@@ -25,7 +25,7 @@ set $right l
 set $term $TERMINAL
 
 # Application launcher
-set $bemenu_args -i -l 20 --tb "$base0D" --tf "$base00" --fb "$base00" --ff "$base05" --nb "$base00" --nf "$base05" --hb "$base0D" --hf "$base00"
+set $bemenu_args -i -l 25 --tb "$base0D" --tf "$base00" --fb "$base00" --ff "$base05" --nb "$base00" --nf "$base05" --hb "$base0D" --hf "$base00"
 set $app_menu j4-dmenu-desktop --dmenu='bemenu $bemenu_args' --no-generic --term='$term' --wrapper='run-in-scope-quoted'
 set $com_menu $app_menu
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-COPY_ENTRIES="blueman-manager chromium emacs firefox gammastep-indicator gimp htop imv-folder kitty mpv org.pwmt.zathura-pdf-mupdf pcmanfm sublime_merge sublime_text vim xarchiver"
-DISPLAY_ENTRIES="blueman-manager chromium emacs firefox gammastep-indicator gimp htop pcmanfm sublime_merge sublime_text"
+COPY_ENTRIES="blueman-manager chromium emacs firefox gammastep-indicator gimp htop imv-folder kitty lunacy mattermost-desktop mpv org.gnome.Meld org.inkscape.Inkscape org.pwmt.zathura-pdf-mupdf pcmanfm slack sublime_merge sublime_text vim xarchiver"
+DISPLAY_ENTRIES="blueman-manager chromium emacs firefox gammastep-indicator gimp htop lunacy mattermost-desktop org.gnome.Meld org.inkscape.Inkscape pcmanfm slack sublime_merge sublime_text"
 TITLE_BY_ENTRIES="gammastep-indicator=Gammastep gimp=GIMP pcmanfm=File_Manager"
 REMOVE_MIMETYPE_FROM="chromium emacs firefox gimp sublime_merge sublime_text"
 
