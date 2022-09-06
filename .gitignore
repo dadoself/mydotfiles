@@ -34,6 +34,7 @@
 .emacs.d/
 .emulator_console_auth_token
 .git-credentials
+.gitconfig-*
 .gnupg/
 .gradle-kotlin-dsl/
 .gradle/
@@ -88,4 +89,4 @@ Projects/
 Public/
 Templates/
 Videos/
-snap/
+org/
