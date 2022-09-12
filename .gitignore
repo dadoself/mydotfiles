@@ -61,6 +61,7 @@
 .local/share/taskwarrior-tui/
 .local/share/user-places.*
 .local/share/zathura/
+.local/share/zellij/
 .local/state/pipewire/
 .local/state/wireplumber/
 .m2/
