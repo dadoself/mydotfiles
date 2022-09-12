@@ -1,8 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq user-full-name "Davide Bianco"
-      user-mail-address "dadoself@gmail.com")
-
 (setq doom-theme 'doom-one)
 
 (setq org-directory "~/org/")
