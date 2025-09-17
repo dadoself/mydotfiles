@@ -1,2 +1,7 @@
 [core]
     editor = vim
+[includeIf "gitdir:~/.mydotfiles/"]
+    path = .gitconfig-dado
+#[includeIf "hasconfig:remote.*.url:git@github-dado:*/**"]
+[includeIf "gitdir:~/Projects/dado/"]
+    path = .gitconfig-dado

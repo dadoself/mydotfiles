@@ -23,6 +23,7 @@
 .config/pcmanfm/
 .config/pipewire/
 .config/pulse/
+.config/spotify/
 .config/sublime-merge/
 .config/sublime-text-3/
 .config/sway/theme.config
@@ -62,6 +63,7 @@
 .local/share/user-places.*
 .local/share/zathura/
 .local/share/zellij/
+.local/share/zoxide/
 .local/state/pipewire/
 .local/state/wireplumber/
 .m2/

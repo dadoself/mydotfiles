@@ -6,3 +6,4 @@ export BEMENU_BACKEND=curses
 source ~/.config/broot/launcher/bash/br
 
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"

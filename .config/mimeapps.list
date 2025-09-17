@@ -1,0 +1,12 @@
+[Added Associations]
+application/xml=sublime_text.desktop;
+text/x-gradle=sublime_text.desktop;
+text/plain=android-studio.desktop;sublime_text.desktop;
+image/jpeg=firefox.desktop;
+image/png=firefox.desktop;org.pwmt.zathura.desktop;
+
+[Default Applications]
+x-scheme-handler/terminal=kitty.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/postman=Postman.desktop
